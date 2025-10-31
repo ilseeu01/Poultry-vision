@@ -24,8 +24,8 @@ import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
 
 // Vision UI Dashboard React example components
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
-import PageLayout from "examples/LayoutContainers/PageLayout";
+import DefaultNavbar from "common/Navbars/DefaultNavbar";
+import PageLayout from "common/LayoutContainers/PageLayout";
 
 // Authentication layout components
 import Footer from "layouts/authentication/components/Footer";
@@ -58,13 +58,7 @@ function CoverLayout({
         gradients.cover.angle
       )}
     >
-      <DefaultNavbar
-        action={{
-          type: "external",
-          route: "https://creative-tim.com/product/vision-ui-dashboard-pro-react",
-          label: "BUY NOW",
-        }}
-      />
+      <DefaultNavbar />
       <VuiBox
         height="100%"
         width="50vw"
@@ -205,7 +199,6 @@ function CoverLayout({
           >
             {children}
           </VuiBox>
-          <Footer />
         </VuiBox>
       </VuiBox>
     </PageLayout>

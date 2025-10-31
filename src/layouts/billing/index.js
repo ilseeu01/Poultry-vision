@@ -22,52 +22,42 @@ import Grid from "@mui/material/Grid";
 // Vision UI Dashboard React components
 import VuiBox from "components/VuiBox";
 
-// Vision UI Dashboard React components
-import MasterCard from "examples/Cards/MasterCard";
 // Vision UI Dashboard React example components
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
+import DashboardLayout from "common/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "common/Navbars/DashboardNavbar";
+import Footer from "common/Footer";
 
-// Billing page components
-import PaymentMethod from "layouts/billing/components/PaymentMethod";
-import Invoices from "layouts/billing/components/Invoices";
-import BillingInformation from "layouts/billing/components/BillingInformation";
-import Transactions from "layouts/billing/components/Transactions";
-import CreditBalance from "./components/CreditBalance";
+// Revenue Management page components
+import ChickenStatus from "layouts/billing/components/ChickenStatus";
+import RevenueCalculation from "layouts/billing/components/RevenueCalculation";
+import ShipmentSchedule from "layouts/billing/components/ShipmentSchedule";
+import CostBreakdown from "layouts/billing/components/CostBreakdown";
 
 function Billing() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
       <VuiBox mt={4}>
-        <VuiBox mb={1.5}>
+        <VuiBox mb={3}>
           <Grid container spacing={3}>
-            <Grid item xs={12} lg={7} xl={8}>
-              <Grid container spacing={3}>
-                <Grid item xs={12} xl={6}>
-                  <MasterCard number={7812213908237916} valid="05/24" cvv="09X" />
-                </Grid>
-                <Grid item xs={12} md={12} xl={6}>
-                  <CreditBalance />
-                </Grid>
-                <Grid item xs={12}>
-                  <PaymentMethod />
-                </Grid>
-              </Grid>
+            {/* 상단: 현재 닭 현황 + 예상 수익 */}
+            <Grid item xs={12} lg={6}>
+              <ChickenStatus />
             </Grid>
-            <Grid item xs={12} lg={5} xl={4}>
-              <Invoices />
+            <Grid item xs={12} lg={6}>
+              <RevenueCalculation />
             </Grid>
           </Grid>
         </VuiBox>
-        <VuiBox my={3}>
+
+        <VuiBox mb={3}>
           <Grid container spacing={3}>
-            <Grid item xs={12} md={7}>
-              <BillingInformation />
+            {/* 중단: 출하 예정 정보 + 비용 내역 */}
+            <Grid item xs={12} lg={6}>
+              <ShipmentSchedule />
             </Grid>
-            <Grid item xs={12} md={5}>
-              <Transactions />
+            <Grid item xs={12} lg={6}>
+              <CostBreakdown />
             </Grid>
           </Grid>
         </VuiBox>

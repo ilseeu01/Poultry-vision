@@ -302,22 +302,6 @@ vision-dashboard-react-free/
     │   │   │   ├── lineChartData.js
     │   │   │   └── lineChartOptions.js
     │   │   └── index.js
-    │   ├── profile
-    │   │   ├── components
-    │   │   │   ├── CarInformations
-    │   │   │   │   └── index.js
-    │   │   │   ├── Header
-    │   │   │   │   └── index.js
-    │   │   │   ├── PlatformSettings
-    │   │   │   │   └── index.js
-    │   │   │   └── Welcome
-    │   │   │       └── index.js
-    │   │   ├── data
-    │   │   │   ├── lineChartData1.js
-    │   │   │   ├── lineChartData2.js
-    │   │   │   ├── lineChartOptions1.js
-    │   │   │   └── lineChartOptions2.js
-    │   │   └── index.js
     │   ├── rtl
     │   │   ├── components
     │   │   │   ├── OrderOverview

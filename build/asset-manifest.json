@@ -1,37 +1,23 @@
 {
   "files": {
-    "main.css": "/honam-is-hackerton/static/css/main.a3625b32.css",
-    "main.js": "/honam-is-hackerton/static/js/main.a2c423f8.js",
-    "static/media/gaussian_heatmap_h264.mp4": "/honam-is-hackerton/static/media/gaussian_heatmap_h264.6901436bf6d52ff204dd.mp4",
-    "static/media/signUpImage.png": "/honam-is-hackerton/static/media/signUpImage.c40a27bbff0e613ecf60.png",
-    "static/media/signInImage.png": "/honam-is-hackerton/static/media/signInImage.127192f68887f98e12aa.png",
-    "static/media/output1.mp4": "/honam-is-hackerton/static/media/output1.2e3c284f759395a6696e.mp4",
-    "static/media/body-background.png": "/honam-is-hackerton/static/media/body-background.9e7d96f6af5373ca1771.png",
-    "static/media/output3.mp4": "/honam-is-hackerton/static/media/output3.26c1e98d3da92fe5a398.mp4",
-    "static/media/output2.mp4": "/honam-is-hackerton/static/media/output2.a7bcff12923fe52241a0.mp4",
-    "static/media/avatar2.png": "/honam-is-hackerton/static/media/avatar2.b8132c3c3e173e102344.png",
-    "static/media/avatar3.png": "/honam-is-hackerton/static/media/avatar3.4d26ce02004a4cd4655b.png",
-    "static/media/avatar1.png": "/honam-is-hackerton/static/media/avatar1.1d9e197816db0b5886c1.png",
-    "static/media/billing-background-card.png": "/honam-is-hackerton/static/media/billing-background-card.4fa04d9c116ce21d59e4.png",
-    "static/media/avatar4.png": "/honam-is-hackerton/static/media/avatar4.2a4ba26ccb999bc77825.png",
-    "static/media/output4.mp4": "/honam-is-hackerton/static/media/output4.be9aaeff0e12d5af4b1b.mp4",
-    "static/media/welcome-profile.png": "/honam-is-hackerton/static/media/welcome-profile.309ed05e3af3dbed8af1.png",
-    "static/media/sidenav-card-background.png": "/honam-is-hackerton/static/media/sidenav-card-background.00019e46ffe060c4df59.png",
-    "static/media/profile-2.png": "/honam-is-hackerton/static/media/profile-2.9c96bf403a3e3cf5de26.png",
-    "static/media/profile-1.png": "/honam-is-hackerton/static/media/profile-1.b93e4339963d91504288.png",
-    "static/media/profile-3.png": "/honam-is-hackerton/static/media/profile-3.bc1975301e7abf84f059.png",
-    "static/media/team-2.jpg": "/honam-is-hackerton/static/media/team-2.5e013d903a52bbb837e8.jpg",
-    "static/media/logo-spotify.svg": "/honam-is-hackerton/static/media/logo-spotify.88c0d071630c966aa8887a796bb3114d.svg",
-    "index.html": "/honam-is-hackerton/index.html",
-    "static/media/car-profile.svg": "/honam-is-hackerton/static/media/car-profile.f1fd6dbea2885b70d857d952f7bf1fa6.svg",
-    "static/media/graph-billing.svg": "/honam-is-hackerton/static/media/graph-billing.b9f0ef123536bbe194a6f77e89a77ed2.svg",
-    "static/media/green-lightning.svg": "/honam-is-hackerton/static/media/green-lightning.c20f110b7b466ab0409ebe815ace4c95.svg",
-    "static/media/white-lightning.svg": "/honam-is-hackerton/static/media/white-lightning.4b30144a95d73615625d82776f129a8f.svg",
-    "main.a3625b32.css.map": "/honam-is-hackerton/static/css/main.a3625b32.css.map",
-    "main.a2c423f8.js.map": "/honam-is-hackerton/static/js/main.a2c423f8.js.map"
+    "main.css": "/honam-is-hackathon/static/css/main.a3625b32.css",
+    "main.js": "/honam-is-hackathon/static/js/main.5dc617a3.js",
+    "static/media/gaussian_heatmap_h264.mp4": "/honam-is-hackathon/static/media/gaussian_heatmap_h264.6901436bf6d52ff204dd.mp4",
+    "static/media/signInImage.png": "/honam-is-hackathon/static/media/signInImage.127192f68887f98e12aa.png",
+    "static/media/output1.mp4": "/honam-is-hackathon/static/media/output1.2e3c284f759395a6696e.mp4",
+    "static/media/body-background.png": "/honam-is-hackathon/static/media/body-background.9e7d96f6af5373ca1771.png",
+    "static/media/output3.mp4": "/honam-is-hackathon/static/media/output3.26c1e98d3da92fe5a398.mp4",
+    "static/media/output2.mp4": "/honam-is-hackathon/static/media/output2.a7bcff12923fe52241a0.mp4",
+    "static/media/output4.mp4": "/honam-is-hackathon/static/media/output4.be9aaeff0e12d5af4b1b.mp4",
+    "static/media/sidenav-card-background.png": "/honam-is-hackathon/static/media/sidenav-card-background.00019e46ffe060c4df59.png",
+    "static/media/team-2.jpg": "/honam-is-hackathon/static/media/team-2.5e013d903a52bbb837e8.jpg",
+    "static/media/logo-spotify.svg": "/honam-is-hackathon/static/media/logo-spotify.88c0d071630c966aa8887a796bb3114d.svg",
+    "index.html": "/honam-is-hackathon/index.html",
+    "main.a3625b32.css.map": "/honam-is-hackathon/static/css/main.a3625b32.css.map",
+    "main.5dc617a3.js.map": "/honam-is-hackathon/static/js/main.5dc617a3.js.map"
   },
   "entrypoints": [
     "static/css/main.a3625b32.css",
-    "static/js/main.a2c423f8.js"
+    "static/js/main.5dc617a3.js"
   ]
 }

@@ -27,9 +27,9 @@ import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
 
 // Vision UI Dashboard React example components
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
+import DashboardLayout from "common/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "common/Navbars/DashboardNavbar";
+import Footer from "common/Footer";
 
 // Video sources
 import video1 from "assets/images/output1.mp4";

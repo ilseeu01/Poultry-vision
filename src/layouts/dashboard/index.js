@@ -26,10 +26,10 @@ import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
 
 // Vision UI Dashboard React example components
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
-import MiniStatisticsCard from "examples/Cards/StatisticsCards/MiniStatisticsCard";
+import DashboardLayout from "common/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "common/Navbars/DashboardNavbar";
+import Footer from "common/Footer";
+import MiniStatisticsCard from "common/Cards/StatisticsCards/MiniStatisticsCard";
 
 // Vision UI Dashboard React base styles
 import typography from "assets/theme/base/typography";

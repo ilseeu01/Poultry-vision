@@ -17,9 +17,7 @@
 */
 
 import { useState } from "react";
-
-// react-router-dom components
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 // Vision UI Dashboard React components
 import VuiBox from "components/VuiBox";
@@ -27,111 +25,176 @@ import VuiTypography from "components/VuiTypography";
 import VuiInput from "components/VuiInput";
 import VuiButton from "components/VuiButton";
 import VuiSwitch from "components/VuiSwitch";
-import GradientBorder from "examples/GradientBorder";
 
-// Vision UI Dashboard assets
-import radialGradient from "assets/theme/functions/radialGradient";
-import palette from "assets/theme/base/colors";
-import borders from "assets/theme/base/borders";
-
-// Authentication layout components
-import CoverLayout from "layouts/authentication/components/CoverLayout";
-
-// Images
-import bgSignIn from "assets/images/signInImage.png";
+// Vision UI Dashboard React example components
+import PageLayout from "common/LayoutContainers/PageLayout";
 
 function SignIn() {
+  const history = useHistory();
   const [rememberMe, setRememberMe] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    history.push("/dashboard");
+  };
+
   return (
-    <CoverLayout
-      title="Nice to see you!"
-      color="white"
-      description="Enter your email and password to sign in"
-      premotto="INSPIRED BY THE FUTURE:"
-      motto="THE VISION UI DASHBOARD"
-      image={bgSignIn}
-    >
-      <VuiBox component="form" role="form">
-        <VuiBox mb={2}>
-          <VuiBox mb={1} ml={0.5}>
-            <VuiTypography component="label" variant="button" color="white" fontWeight="medium">
-              Email
-            </VuiTypography>
-          </VuiBox>
-          <GradientBorder
-            minWidth="100%"
-            padding="1px"
-            borderRadius={borders.borderRadius.lg}
-            backgroundImage={radialGradient(
-              palette.gradients.borderLight.main,
-              palette.gradients.borderLight.state,
-              palette.gradients.borderLight.angle
-            )}
-          >
-            <VuiInput type="email" placeholder="Your email..." fontWeight="500" />
-          </GradientBorder>
-        </VuiBox>
-        <VuiBox mb={2}>
-          <VuiBox mb={1} ml={0.5}>
-            <VuiTypography component="label" variant="button" color="white" fontWeight="medium">
-              Password
-            </VuiTypography>
-          </VuiBox>
-          <GradientBorder
-            minWidth="100%"
-            borderRadius={borders.borderRadius.lg}
-            padding="1px"
-            backgroundImage={radialGradient(
-              palette.gradients.borderLight.main,
-              palette.gradients.borderLight.state,
-              palette.gradients.borderLight.angle
-            )}
-          >
-            <VuiInput
-              type="password"
-              placeholder="Your password..."
-              sx={({ typography: { size } }) => ({
-                fontSize: size.sm,
-              })}
-            />
-          </GradientBorder>
-        </VuiBox>
-        <VuiBox display="flex" alignItems="center">
-          <VuiSwitch color="info" checked={rememberMe} onChange={handleSetRememberMe} />
-          <VuiTypography
-            variant="caption"
-            color="white"
-            fontWeight="medium"
-            onClick={handleSetRememberMe}
-            sx={{ cursor: "pointer", userSelect: "none" }}
-          >
-            &nbsp;&nbsp;&nbsp;&nbsp;Remember me
-          </VuiTypography>
-        </VuiBox>
-        <VuiBox mt={4} mb={1}>
-          <VuiButton color="info" fullWidth>
-            SIGN IN
-          </VuiButton>
-        </VuiBox>
-        <VuiBox mt={3} textAlign="center">
-          <VuiTypography variant="button" color="text" fontWeight="regular">
-            Don&apos;t have an account?{" "}
+    <PageLayout>
+      <VuiBox
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        minHeight="100vh"
+        sx={{
+          background: "linear-gradient(135deg, #FF6B35 0%, #FF8C69 100%)",
+        }}
+      >
+        <VuiBox
+          sx={{
+            maxWidth: "450px",
+            width: "100%",
+            margin: "0 20px",
+            backgroundColor: "rgba(255, 255, 255, 0.98)",
+            borderRadius: "24px",
+            padding: "48px 40px",
+            boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
+          }}
+        >
+          {/* Logo and Title */}
+          <VuiBox mb={4} textAlign="center">
             <VuiTypography
-              component={Link}
-              to="/authentication/sign-up"
-              variant="button"
-              color="white"
-              fontWeight="medium"
+              variant="h2"
+              fontWeight="bold"
+              sx={{
+                background: "linear-gradient(135deg, #FF6B35 0%, #FF8C69 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                mb: 1,
+              }}
             >
-              Sign up
+              🐓 꼬꼬알리미
             </VuiTypography>
-          </VuiTypography>
+            <VuiTypography variant="body2" color="text" fontWeight="regular">
+              스마트 양계장 관리 시스템
+            </VuiTypography>
+          </VuiBox>
+
+          {/* Form */}
+          <VuiBox component="form" role="form" onSubmit={handleSubmit}>
+            <VuiBox mb={3}>
+              <VuiBox mb={1}>
+                <VuiTypography
+                  component="label"
+                  variant="button"
+                  fontWeight="medium"
+                  sx={{ color: "#1a1f37" }}
+                >
+                  이메일
+                </VuiTypography>
+              </VuiBox>
+              <VuiInput
+                type="email"
+                placeholder="example@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                sx={{
+                  backgroundColor: "#f8f9fa !important",
+                  border: "2px solid #e2e8f0",
+                  borderRadius: "12px",
+                  "&:focus-within": {
+                    border: "2px solid #FF6B35",
+                  },
+                }}
+              />
+            </VuiBox>
+
+            <VuiBox mb={3}>
+              <VuiBox mb={1}>
+                <VuiTypography
+                  component="label"
+                  variant="button"
+                  fontWeight="medium"
+                  sx={{ color: "#1a1f37" }}
+                >
+                  비밀번호
+                </VuiTypography>
+              </VuiBox>
+              <VuiInput
+                type="password"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                sx={{
+                  backgroundColor: "#f8f9fa !important",
+                  border: "2px solid #e2e8f0",
+                  borderRadius: "12px",
+                  "&:focus-within": {
+                    border: "2px solid #FF6B35",
+                  },
+                }}
+              />
+            </VuiBox>
+
+            <VuiBox display="flex" alignItems="center" mb={4}>
+              <VuiSwitch
+                color="info"
+                checked={rememberMe}
+                onChange={handleSetRememberMe}
+              />
+              <VuiTypography
+                variant="caption"
+                fontWeight="regular"
+                onClick={handleSetRememberMe}
+                sx={{
+                  cursor: "pointer",
+                  userSelect: "none",
+                  ml: 1,
+                  color: "#4a5568",
+                }}
+              >
+                로그인 상태 유지
+              </VuiTypography>
+            </VuiBox>
+
+            <VuiBox>
+              <VuiButton
+                type="submit"
+                fullWidth
+                size="large"
+                sx={{
+                  background: "linear-gradient(135deg, #FF6B35 0%, #FF8C69 100%)",
+                  color: "white",
+                  fontWeight: "bold",
+                  fontSize: "16px",
+                  letterSpacing: "0.5px",
+                  padding: "14px",
+                  borderRadius: "12px",
+                  textTransform: "none",
+                  boxShadow: "0 4px 15px rgba(255, 107, 53, 0.4)",
+                  "&:hover": {
+                    background: "linear-gradient(135deg, #E65A2E 0%, #E67A5C 100%)",
+                    boxShadow: "0 6px 20px rgba(255, 107, 53, 0.6)",
+                  },
+                }}
+              >
+                로그인
+              </VuiButton>
+            </VuiBox>
+          </VuiBox>
+
+          {/* Footer */}
+          <VuiBox mt={3} textAlign="center">
+            <VuiTypography variant="caption" color="text" fontWeight="regular">
+              AI 기반 스마트 팜 모니터링
+            </VuiTypography>
+          </VuiBox>
         </VuiBox>
       </VuiBox>
-    </CoverLayout>
+    </PageLayout>
   );
 }
 

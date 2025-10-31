@@ -161,7 +161,7 @@ export default styled(InputBase)(({ theme, ownerState }) => {
     backgroundColor: disabled ? `${grey[200]} !important` : white.main,
     pointerEvents: disabled ? "none" : "auto",
     backgroundColor: `${disabled ? grey[600] : inputColors.backgroundColor} !important`,
-    color: `${white.main} !important`,
+    color: `#1a1f37 !important`,
     borderRadius: borderRadius.lg,
     border: `0.5px solid ${grey[600]}`,
     ...(size === "small" && smallStyles()),
@@ -171,7 +171,7 @@ export default styled(InputBase)(({ theme, ownerState }) => {
     ...(success && successStyles()),
     ...((iconDirection === "left" || iconDirection === "right") && withIconStyles()),
     "& ::placeholder": {
-      color: `${white.main} !important`,
+      color: `rgba(26, 31, 55, 0.6) !important`,
       fontSize: "12px",
     },
 

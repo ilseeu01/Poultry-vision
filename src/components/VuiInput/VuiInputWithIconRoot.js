@@ -43,11 +43,11 @@ export default styled("div")(({ theme, ownerState }) => {
     borderRadius: borderRadius.lg,
     borderColor: borderColorValue,
     "& .MuiIcon-root": {
-      color: grey[500],
+      color: "#1a1f37",
     },
 
     "& .MuiInputBase-input": {
-      color: white.main,
+      color: "#1a1f37",
       height: "100%",
       paddingX: pxToRem(20),
       backgroundColor: disabled ? grey[600] : inputColors.backgroundColor,
@@ -59,7 +59,7 @@ export default styled("div")(({ theme, ownerState }) => {
       borderBottomLeftRadius: "0px",
       backgroundColor: `${disabled ? grey[600] : inputColors.backgroundColor} !important`,
       "& ::placeholder": {
-        color: `${white.main} !important`,
+        color: `rgba(26, 31, 55, 0.6) !important`,
       },
     },
   };
