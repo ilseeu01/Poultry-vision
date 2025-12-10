@@ -70,25 +70,15 @@ function Tables() {
     </Card>
   );
 
-  const CameraCard = ({ title, videoSrc, hasAlert = false }) => (
-    <Card
+  const CameraCard = ({ title, videoSrc, hasAlert = false, height = "630px", maxWidth = "100%" }) => (
+    <Box
       sx={{
-        height: "320px",
+        height: height,
+        maxWidth: maxWidth,
         position: "relative",
-        backgroundColor: "#ffffff",
-        border: hasAlert ? "3px solid #FF6B35" : "1px solid #e2e8f0",
+        backgroundColor: "transparent",
         borderRadius: "20px",
-        overflow: "hidden",
-        boxShadow: hasAlert 
-          ? "0 12px 40px rgba(255, 107, 53, 0.4)" 
-          : "0 8px 32px rgba(0, 0, 0, 0.1)",
-        transition: "all 0.3s ease",
-        "&:hover": {
-          transform: "translateY(-4px)",
-          boxShadow: hasAlert 
-            ? "0 16px 48px rgba(255, 107, 53, 0.5)" 
-            : "0 12px 40px rgba(0, 0, 0, 0.15)"
-        }
+        overflow: "hidden"
       }}
     >
       <video
@@ -101,80 +91,18 @@ function Tables() {
           left: 0,
           width: "100%",
           height: "100%",
-          objectFit: "cover",
+          objectFit: "contain",
+          borderRadius: "20px",
         }}
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
-      
-      {/* Alert indicator */}
-      {hasAlert && (
-        <VuiBox
-          sx={{
-            position: "absolute",
-            top: 16,
-            right: 16,
-            width: "48px",
-            height: "48px",
-            background: "linear-gradient(135deg, #FF6B35 0%, #FF8C69 100%)",
-            borderRadius: "50%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            zIndex: 3,
-            boxShadow: "0 4px 16px rgba(255, 107, 53, 0.4)",
-            animation: "pulse 2s infinite"
-          }}
-        >
-          <VuiTypography variant="h6" color="white" fontWeight="bold">
-            \u26a0
-          </VuiTypography>
-        </VuiBox>
-      )}
-      
-      {/* Status badge */}
-      <VuiBox
-        sx={{
-          position: "absolute",
-          top: 16,
-          left: 16,
-          background: "rgba(0, 0, 0, 0.6)",
-          backdropFilter: "blur(10px)",
-          padding: "8px 12px",
-          borderRadius: "8px",
-          zIndex: 3
-        }}
-      >
-        <VuiTypography variant="caption" color="white" fontWeight="medium">
-          \ud83d\udd34 LIVE
-        </VuiTypography>
-      </VuiBox>
-      
-      {/* Title overlay */}
-      <VuiBox
-        sx={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          background: "linear-gradient(transparent, rgba(0,0,0,0.8))",
-          p: 3,
-          zIndex: 2
-        }}
-      >
-        <VuiTypography variant="h4" color="white" fontWeight="bold" mb={1}>
-          {title}
-        </VuiTypography>
-        <VuiTypography variant="caption" sx={{ color: "rgba(255,255,255,0.8)" }}>
-          \uc2e4\uc2dc\uac04 \ubaa8\ub2c8\ud130\ub9c1 \uc911
-        </VuiTypography>
-      </VuiBox>
-    </Card>
+    </Box>
   );
 
   return (
     <DashboardLayout>
-      <VuiBox py={3}>
+      <VuiBox py={3} sx={{ backgroundColor: "#ffffff" }}>
         {/* Header Section */}
         <VuiBox mb={4}>
           <VuiTypography variant="h4" sx={{ color: "#2D3748" }} fontWeight="bold" mb={3}>
@@ -190,8 +118,8 @@ function Tables() {
               display: "inline-block"
             }}
           >
-            <Tabs 
-              value={tabValue} 
+            <Tabs
+              value={tabValue}
               onChange={handleTabChange}
               sx={{
                 minHeight: "48px",
@@ -218,8 +146,6 @@ function Tables() {
             >
               <Tab label="A동" />
               <Tab label="B동" />
-              <Tab label="C동" />
-              <Tab label="D동" />
             </Tabs>
           </VuiBox>
         </VuiBox>
@@ -252,13 +178,13 @@ function Tables() {
               >
                 <VuiBox position="relative" zIndex={1}>
                   <VuiTypography variant="h6" fontWeight="medium" mb={1} sx={{ opacity: 0.9 }}>
-                    ⚠️ 미처리 사체
+                    📊 추적 개체
                   </VuiTypography>
                   <VuiTypography variant="h2" fontWeight="bold" mb={1}>
-                    5마리
+                    {tabValue === 0 ? "103마리" : "110마리"}
                   </VuiTypography>
                   <VuiTypography variant="caption" sx={{ opacity: 0.8 }}>
-                    12시간 내 처리 권장
+                    오차가 있을 수 있음
                   </VuiTypography>
                 </VuiBox>
               </VuiBox>
@@ -330,7 +256,7 @@ function Tables() {
                     🕐 정기 점검 루틴
                   </VuiTypography>
                   <VuiTypography variant="h3" fontWeight="bold" mb={1}>
-                    05 - 06 . 11 . 14 - 16
+                    12월 10일 18시
                   </VuiTypography>
                   <VuiTypography variant="body2" sx={{ opacity: 0.8 }}>
                     매트리얼 점검 : 12시간 주기
@@ -342,23 +268,31 @@ function Tables() {
         </VuiBox>
 
         {/* Camera Grid */}
-        <VuiBox>
+        <VuiBox sx={{ backgroundColor: "transparent" }}>
           <VuiTypography variant="h5" sx={{ color: "#000000" }} fontWeight="bold" mb={3}>
             📹 실시간 카메라 모니터링
           </VuiTypography>
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={6} lg={6}>
-              <CameraCard title="CAM-1" videoSrc={video1} hasAlert={true} />
-            </Grid>
-            <Grid item xs={12} md={6} lg={6}>
-              <CameraCard title="CAM-2" videoSrc={video2} />
-            </Grid>
-            <Grid item xs={12} md={6} lg={6}>
-              <CameraCard title="CAM-3" videoSrc={video3} hasAlert={true} />
-            </Grid>
-            <Grid item xs={12} md={6} lg={6}>
-              <CameraCard title="CAM-4" videoSrc={video4} />
-            </Grid>
+          <Grid container spacing={3} sx={{ backgroundColor: "transparent" }}>
+            {tabValue === 0 && (
+              <>
+                <Grid item xs={12} md={6} lg={6}>
+                  <CameraCard title="CAM-1" videoSrc={video1} hasAlert={true} />
+                </Grid>
+                <Grid item xs={12} md={6} lg={6}>
+                  <CameraCard title="CAM-3" videoSrc={video3} hasAlert={true} />
+                </Grid>
+              </>
+            )}
+            {tabValue === 1 && (
+              <>
+                <Grid item xs={12} md={6} lg={6}>
+                  <CameraCard title="CAM-2" videoSrc={video2} />
+                </Grid>
+                <Grid item xs={12} md={6} lg={6}>
+                  <CameraCard title="CAM-4" videoSrc={video4} />
+                </Grid>
+              </>
+            )}
           </Grid>
         </VuiBox>
       </VuiBox>

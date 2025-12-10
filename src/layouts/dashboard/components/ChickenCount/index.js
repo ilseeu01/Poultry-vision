@@ -21,51 +21,85 @@ function ChickenCount() {
 				boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
 				borderRadius: '12px'
 			}}>
-			<VuiBox display='flex' flexDirection='column' alignItems='center' justifyContent='center'>
-				<VuiTypography 
-					variant='button' 
-					fontWeight='regular' 
-					mb='10px'
+			<VuiBox display='flex' flexDirection='column' alignItems='center' justifyContent='center' width='100%'>
+				<VuiTypography
+					variant='button'
+					fontWeight='regular'
+					mb='15px'
 					sx={{ color: '#666' }}>
-					총 마리수
+					출하 예정 일정
 				</VuiTypography>
-				
-				<VuiTypography 
-					variant='h6' 
-					fontWeight='medium' 
-					mb='20px'
-					sx={{ color: '#333' }}>
-					남은 D - 15
-				</VuiTypography>
-				
+
 				<VuiBox
 					display='flex'
 					alignItems='center'
 					justifyContent='center'
 					sx={{
-						width: '80px',
-						height: '80px',
+						width: '60px',
+						height: '60px',
 						backgroundColor: '#f8f8f8',
 						borderRadius: '50%',
 						mb: '20px'
 					}}>
-					<VuiTypography 
-						variant='h4' 
+					<VuiTypography
+						variant='h4'
 						fontWeight='bold'
 						sx={{ color: '#333' }}>
 						🐓
 					</VuiTypography>
 				</VuiBox>
-				
-				<VuiTypography 
-					variant='h3' 
-					fontWeight='bold'
-					sx={{
-						fontSize: '2.5rem',
-						color: '#FF6B35'
-					}}>
-					2500 마리
-				</VuiTypography>
+
+				<VuiBox display='flex' flexDirection='column' alignItems='center' gap='12px' width='100%'>
+					<VuiBox
+						display='flex'
+						justifyContent='space-between'
+						alignItems='center'
+						sx={{
+							width: '100%',
+							maxWidth: '280px',
+							padding: '12px 20px',
+							backgroundColor: '#f8f8f8',
+							borderRadius: '10px'
+						}}>
+						<VuiTypography
+							variant='body2'
+							fontWeight='medium'
+							sx={{ color: '#333' }}>
+							12월 25일 출하
+						</VuiTypography>
+						<VuiTypography
+							variant='h6'
+							fontWeight='bold'
+							sx={{ color: '#FF6B35' }}>
+							D - 15
+						</VuiTypography>
+					</VuiBox>
+
+					<VuiBox
+						display='flex'
+						justifyContent='space-between'
+						alignItems='center'
+						sx={{
+							width: '100%',
+							maxWidth: '280px',
+							padding: '12px 20px',
+							backgroundColor: '#f8f8f8',
+							borderRadius: '10px'
+						}}>
+						<VuiTypography
+							variant='body2'
+							fontWeight='medium'
+							sx={{ color: '#333' }}>
+							12월 31일 출하
+						</VuiTypography>
+						<VuiTypography
+							variant='h6'
+							fontWeight='bold'
+							sx={{ color: '#FF6B35' }}>
+							D - 21
+						</VuiTypography>
+					</VuiBox>
+				</VuiBox>
 			</VuiBox>
 		</Card>
 	);

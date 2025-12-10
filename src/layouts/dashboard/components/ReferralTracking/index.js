@@ -59,7 +59,7 @@ function ReferralTracking() {
               }}
             >
               <VuiTypography color="dark" variant="lg" fontWeight="bold">
-                1번 라인 폐사 개체 감지
+                A동 2라인 폐사 개체 감지
               </VuiTypography>
             </VuiBox>
 
@@ -77,7 +77,7 @@ function ReferralTracking() {
               }}
             >
               <VuiTypography color="dark" variant="lg" fontWeight="bold">
-                3번 라인 폐사 개체 감지
+                B동 3번 라인 폐사 개체 감지
               </VuiTypography>
             </VuiBox>
           </Stack>

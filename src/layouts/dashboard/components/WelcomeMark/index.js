@@ -7,7 +7,7 @@ import videoSource from "assets/images/gaussian_heatmap_h264.mp4";
 const WelcomeMark = () => {
   return (
     <Card sx={() => ({
-      height: "650px",
+      height: "850px",
       py: "32px",
       position: "relative",
       overflow: "hidden"
