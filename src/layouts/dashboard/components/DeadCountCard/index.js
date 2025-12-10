@@ -26,7 +26,7 @@ function DeadCountCard() {
 						variant='caption' 
 						fontWeight='regular'
 						sx={{ color: '#999999' }}>
-						2025. 08. 14. 13:00 기준
+						2025. 12. 10. 13:00 기준
 					</VuiTypography>
 				</VuiBox>
 				
