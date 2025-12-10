@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Poultry-vision/static/css/main.a3625b32.css",
-    "main.js": "/Poultry-vision/static/js/main.dafd5386.js",
+    "main.js": "/Poultry-vision/static/js/main.60567bcb.js",
     "static/media/gaussian_heatmap_h264.mp4": "/Poultry-vision/static/media/gaussian_heatmap_h264.b3f7989dd8a7b8739c65.mp4",
     "static/media/output3.mp4": "/Poultry-vision/static/media/output3.5aac4c7da3e2b0bb481f.mp4",
     "static/media/output4.mp4": "/Poultry-vision/static/media/output4.33fb20b52a9578073e69.mp4",
@@ -42,10 +42,10 @@
     "static/media/logo-spotify.svg": "/Poultry-vision/static/media/logo-spotify.88c0d071630c966aa8887a796bb3114d.svg",
     "index.html": "/Poultry-vision/index.html",
     "main.a3625b32.css.map": "/Poultry-vision/static/css/main.a3625b32.css.map",
-    "main.dafd5386.js.map": "/Poultry-vision/static/js/main.dafd5386.js.map"
+    "main.60567bcb.js.map": "/Poultry-vision/static/js/main.60567bcb.js.map"
   },
   "entrypoints": [
     "static/css/main.a3625b32.css",
-    "static/js/main.dafd5386.js"
+    "static/js/main.60567bcb.js"
   ]
 }
