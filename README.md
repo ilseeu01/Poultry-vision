@@ -8,7 +8,7 @@
 
 ## 🌐 데모
 
-**[🔗 라이브 데모 보기](https://ilseeu01.github.io/Poultry-vision/)**
+**[🔗 라이브 데모 보기](https://poultry-vision.netlify.app/dashboard)**
 
 실제 작동하는 시스템을 확인해보세요!
 
