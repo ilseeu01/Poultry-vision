@@ -7,7 +7,7 @@ import videoSource from "assets/images/gaussian_heatmap_h264.mp4";
 const WelcomeMark = () => {
   return (
     <Card sx={() => ({
-      height: "850px",
+      height: { xs: "400px", sm: "500px", md: "600px", lg: "850px" },
       py: "32px",
       position: "relative",
       overflow: "hidden"
@@ -16,6 +16,7 @@ const WelcomeMark = () => {
         autoPlay
         loop
         muted
+        playsInline
         style={{
           position: "absolute",
           top: 0,

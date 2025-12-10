@@ -145,7 +145,19 @@ function DashboardNavbar({ absolute, light, isMini }) {
       sx={(theme) => navbar(theme, { transparentNavbar, absolute, light })}
     >
       <Toolbar sx={(theme) => navbarContainer(theme)}>
-        <VuiBox color="inherit" mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })}>
+        <VuiBox color="inherit" mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })} display="flex" alignItems="center">
+          <IconButton
+            size="small"
+            color="inherit"
+            sx={{
+              display: { xs: "inline-flex", xl: "none" },
+              mr: 1,
+              color: light ? "white" : "dark",
+            }}
+            onClick={handleMiniSidenav}
+          >
+            <Icon className={light ? "text-white" : "text-dark"}>{miniSidenav ? "menu" : "menu_open"}</Icon>
+          </IconButton>
           <Breadcrumbs icon="home" title={route[route.length - 1]} route={route} light={light} />
         </VuiBox>
         {isMini ? null : (
@@ -191,14 +203,6 @@ function DashboardNavbar({ absolute, light, isMini }) {
                   </VuiTypography>
                 </IconButton>
               </Link>
-              <IconButton
-                size="small"
-                color="inherit"
-                sx={navbarMobileMenu}
-                onClick={handleMiniSidenav}
-              >
-                <Icon className={"text-white"}>{miniSidenav ? "menu_open" : "menu"}</Icon>
-              </IconButton>
               <IconButton
                 size="small"
                 color="inherit"

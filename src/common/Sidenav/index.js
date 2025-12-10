@@ -83,6 +83,13 @@ function Sidenav({ color, brandName, routes, ...rest }) {
     }
   }, []);
 
+  // Close sidebar on mobile when menu item is clicked
+  const handleMenuItemClick = () => {
+    if (window.innerWidth < 1200) {
+      setMiniSidenav(dispatch, true);
+    }
+  };
+
   // Render all the routes from the routes.js (All the visible items on the Sidenav)
   const renderRoutes = routes.map(({ type, name, icon, title, noCollapse, key, route, href }) => {
     let returnValue;
@@ -95,6 +102,7 @@ function Sidenav({ color, brandName, routes, ...rest }) {
           target="_blank"
           rel="noreferrer"
           sx={{ textDecoration: "none" }}
+          onClick={handleMenuItemClick}
         >
           <SidenavCollapse
             color={color}
@@ -105,7 +113,7 @@ function Sidenav({ color, brandName, routes, ...rest }) {
           />
         </Link>
       ) : (
-        <NavLink to={route} key={key}>
+        <NavLink to={route} key={key} onClick={handleMenuItemClick}>
           <SidenavCollapse
             color={color}
             key={key}
